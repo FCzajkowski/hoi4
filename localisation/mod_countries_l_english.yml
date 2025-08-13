@@ -7,7 +7,6 @@
  KAI_DEF: "Free Prussian Kaiserreich"
  KAI_ADJ: "Prussian"
 
- POL_neutrality: "II Polish Republic"
- POL_neutrality_DEF: "II Polish Republic"
- POL_neutrality_ADJ: "Polish"
-
+ POL_democratic: "II Polish Republic"
+ POL_democratic_DEF: "II Polish Republic"
+ POL_democratic_ADJ: "Polish"

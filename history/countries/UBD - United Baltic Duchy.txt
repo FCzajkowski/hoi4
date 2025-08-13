@@ -9,6 +9,7 @@ create_faction = "Intermarinium"
 add_to_faction = POL
 add_to_faction = LIT
 add_to_faction = BLR
+add_to_faction = UKR
 
 set_technology = {
 	infantry_weapons = 1
