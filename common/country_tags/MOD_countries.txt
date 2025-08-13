@@ -1,0 +1,3 @@
+GEM = "countries/GermanEmpireArmy.txt"
+KAI = "countries/Kaiserreich.txt"
+UBD = "countries/UnitedBalticDuchy.txt"

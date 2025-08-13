@@ -1,0 +1,169 @@
+focus_tree = {
+	id = Poland_Focus_Tree
+	country = { 
+		base = 0
+
+		modifier = {
+			add = 20
+			tag = pol
+		}
+	}
+	focus = { 
+		id = POL_expand_microconsitution
+		icon = GFX_focus_POL_complete_april_constitution
+		mutually_exclusive = {
+			focus = POL_honor_Kingdom_Constitution
+		}
+		x = -3 
+		y = 0
+		cost = 2
+		completion_reward = {
+			add_political_power = 10
+		}
+	}
+	focus = { 
+		id = POL_restabilize_administration
+		icon = GFX_focus_POL_consolidate_sanation_government
+		relative_position_id = POL_expand_microconsitution
+		prerequisite = {
+			focus = POL_expand_microconsitution
+		}
+		x = 0
+		y = 1
+		cost = 6
+		completion_reward = {
+			add_stability = 0.05
+		}
+	}
+	focus = { 
+		id = POL_organize_electoral_commissions
+		icon = GFX_focus_POL_consolidate_sanation_government
+		relative_position_id = POL_restabilize_administration
+		prerequisite = {
+			focus = POL_restabilize_administration
+		}
+		x = 1
+		y = 1
+		cost = 3
+		completion_reward = {
+			add_political_power = -10
+		}
+	}
+	focus = { 
+		id = POL_Promote_Civil_Participation
+		icon = GFX_focus_POL_consolidate_sanation_government
+		relative_position_id = POL_restabilize_administration
+		prerequisite = {
+			focus = POL_restabilize_administration
+		}
+		x = -1
+		y = 1
+		cost = 8
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = 0.01
+		}
+	}
+	focus = { 
+		id = POL_Transition_Executive_Power
+		icon = GFX_focus_POL_consolidate_sanation_government
+		relative_position_id = POL_Promote_Civil_Participation
+		prerequisite = {
+			focus = POL_Promote_Civil_Participation
+		}
+		prerequisite = {
+			focus = POL_organize_electoral_commissions
+		}
+		mutually_exclusive = {
+			focus = POL_Remain_Pilsudski_Leadership
+		}
+		x = 0
+		y = 1
+		cost = 8
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.05
+			}
+			add_stability = 0.01
+		}
+	}
+	focus = { 
+		id = POL_Remain_Pilsudski_Leadership
+		icon = GFX_focus_POL_consolidate_sanation_government
+		relative_position_id = POL_organize_electoral_commissions
+		prerequisite = {
+			focus = POL_Promote_Civil_Participation
+		}
+		prerequisite = {
+			focus = POL_organize_electoral_commissions
+		}
+		mutually_exclusive = {
+			focus = POL_Transition_Executive_Power
+		}
+		x = 0
+		y = 1
+		cost = 8
+		completion_reward = {
+			add_stability = -0.05
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.1
+			}
+
+		}
+	}
+	focus = { 
+		id = POL_first_sejm_elections
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = POL_Remain_Pilsudski_Leadership
+		prerequisite = {
+			focus = POL_Remain_Pilsudski_Leadership
+			focus = POL_Transition_Executive_Power
+		}
+		x = -1
+		y = 1
+		cost = 6
+		completion_reward = {
+			add_political_power = 99
+			add_stability = 0.1
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+		}
+	}
+	focus = { 
+		id = POL_honor_Kingdom_Constitution
+		icon = GFX_focus_generic_monarchy_1
+		mutually_exclusive = {
+			focus = POL_expand_microconsitution
+		}
+		x = 3
+		y = 0
+		cost = 2
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+		}
+	}
+	
+	focus = { 
+		id = POL_5_november_act
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_honor_Kingdom_Constitution
+		}
+		relative_position_id = POL_honor_Kingdom_Constitution
+		x = 0
+		y = 1
+		cost = 4
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+		}
+	}
+}
