@@ -137,17 +137,165 @@ focus_tree = {
 		}
 	}
 	focus = { 
+		id = POL_PPS_win
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = POL_first_sejm_elections
+
+		mutually_exclusive = {
+			focus = POL_PSL_win
+			focus = POL_KNP_win
+			focus = POL_ZN-L_win
+		}
+
+		prerequisite = {
+			focus = POL_first_sejm_elections
+		}
+		x = -3
+		y = 1
+		cost = 1
+		completion_reward = {
+			set_party_name = {
+				ideology = communism
+				long_name = "Polska Partia Socjalistyczna"
+				name = "PPS"
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.2
+			}
+		}
+	}
+	focus = { 
+		id = POL_PSL_win
+		icon = GFX_focus_generic_improve_the_administration
+
+		mutually_exclusive = {
+			focus = POL_PPS_win
+			focus = POL_KNP_win
+			focus = POL_ZN-L_win
+		}
+
+		relative_position_id = POL_first_sejm_elections
+		prerequisite = {
+			focus = POL_first_sejm_elections
+		}
+		x = -1
+		y = 1
+		cost = 1
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = "Polskie Stronnictwo Ludowe - Wyzwolenie"
+				name = "PSL-W"
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+	focus = { 
+		id = POL_KNP_win
+		icon = GFX_focus_generic_improve_the_administration
+
+		mutually_exclusive = {
+			focus = POL_PPS_win
+			focus = POL_PSL_win
+			focus = POL_ZN-L_win
+		}
+
+		relative_position_id = POL_first_sejm_elections
+		prerequisite = {
+			focus = POL_first_sejm_elections
+		}
+		x = 1
+		y = 1
+		cost = 1
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = "Komitet Narodowy Polski"
+				name = "KNP"
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.2
+			}
+		}
+	}
+	focus = { 
+		id = POL_ZN-L_win
+		icon = GFX_focus_generic_improve_the_administration
+		relative_position_id = POL_first_sejm_elections
+
+		mutually_exclusive = {
+			focus = POL_PPS_win
+			focus = POL_PSL_win
+			focus = POL_KNP_win
+		}
+
+		prerequisite = {
+			focus = POL_first_sejm_elections
+		}
+		x = 3
+		y = 1
+		cost = 1
+		completion_reward = {
+			set_party_name = {
+				ideology = democratic
+				long_name = "Związek Ludowo-Narodowy"
+				name = "ZN-L"
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				election_frequency = 48
+			}
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+		}
+	}
+
+	#################################################
+	focus = { 
 		id = POL_honor_Kingdom_Constitution
 		icon = GFX_focus_generic_monarchy_1
 		mutually_exclusive = {
 			focus = POL_expand_microconsitution
 		}
-		x = 3
+		x = 8
 		y = 0
 		cost = 2
 		completion_reward = {
 			add_political_power = 99
 			add_stability = -0.05
+
+			set_party_name = {
+				ideology = neutrality
+				long_name = "Rada Regencyjna Krolestwa Polskiego"
+				name = "Rada Regencyjna"
+			}
 		}
 	}
 	
@@ -160,10 +308,153 @@ focus_tree = {
 		relative_position_id = POL_honor_Kingdom_Constitution
 		x = 0
 		y = 1
+		cost = 10
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_stability = 0.01
+		}
+	}
+	focus = { 
+		id = POL_select_Radziwill
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_5_november_act
+		}
+		mutually_exclusive = {
+			focus = POL_select_Romanow
+			focus = POL_select_Hohenzollern
+			focus = POL_select_Jerzy_VI
+			focus = POL_select_Habsburg
+		}
+		relative_position_id = POL_5_november_act
+		x = -4
+		y = 1
 		cost = 4
 		completion_reward = {
 			add_political_power = 99
 			add_stability = -0.05
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = "Dom Radziwillów"
+					name = "Dom Radziwillów"
+				}
+			}
+		}
+	}
+	focus = { 
+		id = POL_select_Romanow
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_5_november_act
+		}
+		mutually_exclusive = {
+			focus = POL_select_Habsburg
+			focus = POL_select_Hohenzollern
+			focus = POL_select_Jerzy_VI
+			focus = POL_select_Radziwill
+		}
+		relative_position_id = POL_5_november_act
+		x = -2
+		y = 1
+		cost = 4
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = "Dom Romanowów"
+					name = "Dom Romanowów"
+				}
+			}
+		}
+	}
+	focus = { 
+		id = POL_select_Hohenzollern
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_5_november_act
+		}
+		relative_position_id = POL_5_november_act
+		mutually_exclusive = {
+			focus = POL_select_Romanow
+			focus = POL_select_Habsburg
+			focus = POL_select_Jerzy_VI
+			focus = POL_select_Radziwill
+		}
+		x = 0
+		y = 1
+		cost = 4
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = "Dom Hohenzollernów"
+					name = "Dom Hohenzollernów"
+				}
+			}
+		}
+	}
+	focus = { 
+		id = POL_select_Jerzy_VI
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_5_november_act
+		}
+		mutually_exclusive = {
+			focus = POL_select_Romanow
+			focus = POL_select_Hohenzollern
+			focus = POL_select_Habsburg
+			focus = POL_select_Radziwill
+		}
+		relative_position_id = POL_5_november_act
+		x = 2
+		y = 1
+		cost = 4
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = "Dom Windstorów"
+					name = "Dom Windstorów"
+				}
+			}
+		}
+	}
+	focus = { 
+		id = POL_select_Habsburg
+		icon = GFX_focus_POL_end_the_regency
+		prerequisite = {
+			focus = POL_5_november_act
+		}
+		relative_position_id = POL_5_november_act
+		mutually_exclusive = {
+			focus = POL_select_Romanow
+			focus = POL_select_Hohenzollern
+			focus = POL_select_Jerzy_VI
+			focus = POL_select_Radziwill
+		}
+		x = 4
+		y = 1
+		cost = 4
+		completion_reward = {
+			add_political_power = 99
+			add_stability = -0.05
+			hidden_effect = {
+				set_party_name = {
+					ideology = neutrality
+					long_name = "Dom Habsburgów"
+					name = "Dom Habsburgów"
+				}
+			}
 		}
 	}
 }
